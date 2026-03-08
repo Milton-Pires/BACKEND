@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public abstract class Equipamento{
     private String id;
     private String nome;
@@ -18,7 +20,7 @@ public abstract class Equipamento{
     }
 
     public String exibeInformacao(){
-        return nome + " - " + status
+        return this.nome + " - " + this.status;
     }
     
 

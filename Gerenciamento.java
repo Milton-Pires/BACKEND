@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Gerenciamento{
     private List<Equipamento> equipamentos = new ArrayList<>();
     private List<Inspecao> inspecoes = new ArrayList<>();
