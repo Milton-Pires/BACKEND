@@ -1,22 +1,20 @@
 import java.time.LocalDate;
 
-public class Inspecao {
+public class Manutencao {
     private String id;
     private Equipamento equipamento;
     private LocalDate dataInspecao;
-    private Usuario responsavel;
+    private Usuario tecnicoResponsavel;
     private boolean aprovado;
     private String observacoes;
+    private StatusManutencao status;
 
-    public boolean aprovado(){
-        return aprovado;
+    public boolean concluida(){
+        return status == StatusManutencao.OK;
     }
 
-    public String relatorio(){
-        return "Equipamento: " + equipamento.nome +
-           "\nResponsável: " + responsavel.getNome() +
-           "\nAprovado: " + aprovado +
-           "\nObs: " + observacoes;
+    public boolean tecnicoValido(){
+        return tecnicoResponsavel.podeRealizarManutencao();
     }
 
     public String getId() {
@@ -38,10 +36,10 @@ public class Inspecao {
         this.dataInspecao = dataInspecao;
     }
     public Usuario getResponsavel() {
-        return responsavel;
+        return tecnicoResponsavel;
     }
     public void setResponsavel(Usuario responsavel) {
-        this.responsavel = responsavel;
+        this.tecnicoResponsavel = responsavel;
     }
     public boolean isAprovado() {
         return aprovado;
@@ -56,5 +54,6 @@ public class Inspecao {
         this.observacoes = observacoes;
     }
 
+    
     
 }
