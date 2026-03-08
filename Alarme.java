@@ -21,6 +21,9 @@ public class Alarme extends Equipamento {
 
     @Override
     public boolean precisaManutencao() {
+        if(ultimaVerificacao == null){
+            return true;
+        }
         return ultimaVerificacao.plusMonths(6).isBefore(LocalDate.now());
     }
 

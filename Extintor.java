@@ -7,11 +7,16 @@ public class Extintor extends Equipamento {
     private LocalDate dataValidade;
     private int pressao;
 
-    public Extintor(String id, String nome, Localizacao localizacao, LocalDate dataInstalacao) {
+    public Extintor(String id, String nome, Localizacao localizacao, LocalDate dataInstalacao, LocalDate dataValidade) {
         super(id, nome, localizacao, dataInstalacao);
+        this.dataValidade = dataValidade;
     }
 
     public boolean estaVencido() {
+
+        if(dataValidade == null) {
+            return false; // Considera como não vencido se a data de validade não for definida
+        }
         return dataValidade.isBefore(LocalDate.now());
     }
 
@@ -28,6 +33,11 @@ public class Extintor extends Equipamento {
     }
     @Override
     public boolean precisaManutencao() {
+
+        if(dataValidade == null) {
+            return false; // Considera como não precisa de manutenção se a data de validade não for definida
+        }
+
         return dataValidade.isBefore(LocalDate.now());
     }
 

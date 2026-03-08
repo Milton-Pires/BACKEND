@@ -8,10 +8,6 @@ public class Inspecao {
     private boolean aprovado;
     private String observacoes;
 
-    public boolean aprovado(){
-        return aprovado;
-    }
-
     public String relatorio(){
         return "Equipamento: " + equipamento.nome +
            "\nResponsável: " + responsavel.getNome() +

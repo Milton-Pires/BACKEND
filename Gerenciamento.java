@@ -5,9 +5,19 @@ public class Gerenciamento {
     private List<Inspecao> inspecoes = new ArrayList<>();
     private List<Manutencao> manutencoes = new ArrayList<>();
     private List<Usuario> usuarios = new ArrayList<>();
+    
 
-    public List<Equipamento> getEquipamentos() {
-        return equipamentos;
+    public void cadastrarUsuario(Usuario u) {
+        usuarios.add(u);
+    }
+    public void removerUsuario(Usuario u) {
+        usuarios.removeIf(usuario -> usuario.getId().equals(u.getId()));
+    }
+
+    public void listarUsuarios() {
+        for (Usuario u : usuarios) {
+            System.out.println(u.informacoesUsuario());
+        }
     }
 
     public void verificarManutencoes(){
@@ -29,7 +39,7 @@ public class Gerenciamento {
 
     public void verificarExtintoresVencidos(){
         for (Equipamento e : equipamentos) {
-            if(e instanceof Extintor) {
+            if(e.precisaManutencao()) {
                 Extintor ex = (Extintor) e;
 
                 if(ex.estaVencido()) {
@@ -54,7 +64,7 @@ public class Gerenciamento {
     public void gerarRelatorio() {
         System.out.println("Relatório de Equipamentos:");
         for (Equipamento e : equipamentos) {
-            System.out.println(e);
+            System.out.println(e.exibeInformacao());
         }
         System.out.println("\nRelatório de Inspeções:");
         for (Inspecao i : inspecoes) {
@@ -64,5 +74,9 @@ public class Gerenciamento {
         for (Manutencao m : manutencoes) {
             System.out.println(m);
         }
+    }
+    
+    public List<Equipamento> getEquipamentos() {
+        return equipamentos;
     }
 }

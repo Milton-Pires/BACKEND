@@ -3,7 +3,7 @@ import java.time.LocalDate;
 public abstract class Equipamento{
     protected String id;
     protected String nome;
-    protected Localizacao Localizacao;
+    protected Localizacao localizacao;
     protected LocalDate dataInstalacao;
     protected Status status;
     protected boolean ativo;
@@ -12,7 +12,7 @@ public abstract class Equipamento{
     public Equipamento(String id, String nome, Localizacao localizacao, LocalDate dataInstalacao) {
         this.id = id;
         this.nome = nome;
-        Localizacao = localizacao;
+        this.localizacao = localizacao;
         this.dataInstalacao = dataInstalacao;
         this.status = Status.PENDENTE;
         this.ativo = true;
@@ -73,10 +73,10 @@ public abstract class Equipamento{
         this.nome = nome;
     }
     public Localizacao getLocalizacao() {
-        return Localizacao;
+        return localizacao;
     }
     public void setLocalizacao(Localizacao localizacao) {
-        Localizacao = localizacao;
+        this.localizacao = localizacao;
     }
     public LocalDate getDataInstalacao() {
         return dataInstalacao;

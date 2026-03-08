@@ -3,7 +3,7 @@ import java.time.LocalDate;
 public class Manutencao {
     private String id;
     private Equipamento equipamento;
-    private LocalDate dataInspecao;
+    private LocalDate dataManutencao;
     private Usuario tecnicoResponsavel;
     private boolean aprovado;
     private String observacoes;
@@ -29,11 +29,11 @@ public class Manutencao {
     public void setEquipamento(Equipamento equipamento) {
         this.equipamento = equipamento;
     }
-    public LocalDate getDataInspecao() {
-        return dataInspecao;
+    public LocalDate getdataManutencao() {
+        return dataManutencao;
     }
-    public void setDataInspecao(LocalDate dataInspecao) {
-        this.dataInspecao = dataInspecao;
+    public void setdataManutencao(LocalDate dataManutencao) {
+        this.dataManutencao = dataManutencao;
     }
     public Usuario getResponsavel() {
         return tecnicoResponsavel;
