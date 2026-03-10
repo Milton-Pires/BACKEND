@@ -7,6 +7,7 @@ public class Inspecao {
     private Usuario responsavel;
     private boolean aprovado;
     private String observacoes;
+    private Status status;
 
     public String relatorio(){
         return "Equipamento: " + equipamento.nome +
@@ -50,6 +51,10 @@ public class Inspecao {
     }
     public void setObservacoes(String observacoes) {
         this.observacoes = observacoes;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     
