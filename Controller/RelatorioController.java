@@ -13,10 +13,13 @@ public class RelatorioController{
 
     //Métodos
 
+    //Filtro por Localizacao
     public void gerarRelatorioPorLocalizacao(String nomeLocalizacao){
-        System.out.println("\n=====RELATÓRIO=====");
+        System.out.println("\n=====RELATÓRIO POR LOCALIZAÇÃO=====");
         int totalEquipamentos = 0;
         Set<String> tecnicos = new HashSet<>();
+
+
 
         for (Inspecao i : inspecoes){
             if(i.getLocalizacao().getNome().equalsIgnoreCase(nomeLocalizacao)){
@@ -32,7 +35,7 @@ public class RelatorioController{
         }
     }
 
-
+        //Filtro por Equipamento
     public void gerarRelatorioPorEquiapamento(String nomeEquipamento){
         System.out.println("\n=====RELATÓRIO POR EQUIPAMENTO=====");
         System.out.println("Equipamento: " + nomeEquipamento);
@@ -47,8 +50,9 @@ public class RelatorioController{
                 System.out.println("Data: " + i.getDataInspecao());
             }
         }
-    }
+    }   
 
+        //Filtro por Técnico
     public void gerarRelatorioPorTecnico(String nomeTecnico){
         System.out.println("\n=====RELATÓRIO POR TECNICO=====");
         System.out.println("Técnico: " + nomeTecnico);
@@ -64,6 +68,7 @@ public class RelatorioController{
         }
     }
 
+        //Filtro por Periodo
     public void gerarRelatorioPorPeriodo(String dataInicio, String dataFim){
         System.out.println("\n=====RELATÓRIO POR PERÍODO=====");
         System.out.println("De: " + dataInicio + " até " + dataFim);
@@ -72,9 +77,31 @@ public class RelatorioController{
             String data = i.getDataInspecao;
 
             if(data.compareTo(dataInicio) >= 0 && data.compareTo(dataFim) <= 0){
+
+                System.out.println("--------------------------------------");
+                System.out.println("Equipamento: " + i.getEquipamento().getNome());
+                Sysyem.out.println("Tecnico: " + i.getResponsavel(.getNome()));
+                System.out.println("Localização: " + i.getEquipamento().getLocalizacao().getNome());
+                System.out.println("Status: " + i.getStatus());
+                System.out.println("Data: " + data);
+
+                
                 
             }
         }
+    }
+
+    public void gerarRelatorioGeral(){
+        System.out.println("\n=====RELATÓRIO GERAL DE INSPEÇÕES=====");
+        
+        for(Inspecao i : inspecoes );
+
+        System.out.println("--------------------------------------");
+        System.out.println("Equipamento: " + i.getEquipamento().getNome());
+        System.out.println("Técnico: " + i.getResponsavel().getNome());
+        System.out.println("Localização: " + i.getEquipamento().getLocalizacao().getNome());
+        System.out.println("Status: " + i.getStatus());
+        System.out.println("Data: " + i.getDataInspecao());
     }
 } 
 
