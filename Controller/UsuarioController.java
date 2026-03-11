@@ -1,4 +1,7 @@
-@package Controller
+package controller;
+import java.util.ArrayList;
+import java.util.List;
+import model.Usuario;
 
 public class UsuarioController{
     private List<Usuario> usuarios = new ArrayList();
@@ -15,9 +18,9 @@ public class UsuarioController{
             System.out.println(u.informacoesUsuario());
         }
     }
-    public Usuario buscarUsuario(int id){
+    public Usuario buscarUsuario(String id){
         for(Usuario u: usuarios){
-            if(u.getId == id){
+            if(u.getId().equals(id)){
                 return u;
             }
         }

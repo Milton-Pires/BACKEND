@@ -1,3 +1,5 @@
+package model;
+import enums.StatusManutencao;
 import java.time.LocalDate;
 
 public class Manutencao {

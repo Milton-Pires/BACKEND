@@ -1,4 +1,9 @@
-@package Controller
+package controller;
+import model.Equipamento;
+import model.Extintor;
+
+import java.util.*;
+
 public class EquipamentoController{
     private List<Equipamento> equipamentos = new ArrayList();
 
@@ -13,7 +18,7 @@ public class EquipamentoController{
 
     public void verificarExtintoresVencidos(){
         for (Equipamento e : equipamentos) {
-            if(e.precisaManutencao()) {
+            if(e instanceof model.Extintor) {
                 Extintor ex = (Extintor) e;
 
                 if(ex.estaVencido()) {
@@ -23,9 +28,9 @@ public class EquipamentoController{
         }
     }
 
-    public void buscarEquipamentos(int id){
+    public Equipamento buscarEquipamentos(String id){
         for(Equipamento e: equipamentos){
-            if(e.getId == id){
+            if(e.getId().equals(id)){
                 return e;
             }
             
@@ -36,11 +41,11 @@ public class EquipamentoController{
         equipamentos.add(e);
     }
 
-    public boolean removerEquipamento(int id){
-        Equipamento e = buscarEquipamento(id);
+    public boolean removerEquipamento(String id){
+        Equipamento e = buscarEquipamentos(id);
 
         if(e != null){
-            equipamentos.remove(id);
+            equipamentos.remove(e);
             return true;
         }
         else{

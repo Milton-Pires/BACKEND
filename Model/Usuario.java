@@ -1,3 +1,5 @@
+package model;
+import enums.TipoUsuario;
 public class Usuario {
     private String id;
     private String nome;

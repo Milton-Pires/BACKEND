@@ -1,4 +1,8 @@
-@package Controller
+package controller;
+import model.Inspecao;
+
+
+import java.util.*;
 public class InspecaoController{
 
     private List<Inspecao> inspecoes = new ArrayList();

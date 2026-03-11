@@ -1,13 +1,30 @@
+package model;
 import java.time.LocalDate;
+
+import enums.Status;
 
 public class Inspecao {
     private String id;
     private Equipamento equipamento;
+    private Cliente cliente;
     private LocalDate dataInspecao;
     private Usuario responsavel;
     private boolean aprovado;
     private String observacoes;
     private Status status;
+    private Localizacao localizacao;
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public Localizacao getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(Localizacao localizacao) {
+        this.localizacao = localizacao;
+    }
 
     public String relatorio(){
         return "Equipamento: " + equipamento.nome +
@@ -53,9 +70,19 @@ public class Inspecao {
         this.observacoes = observacoes;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    
 
     
 }

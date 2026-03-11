@@ -1,4 +1,8 @@
-@package Controller
+package controller;
+import java.util.ArrayList;
+import java.util.List;
+import model.Manutencao;
+
 public class ManutencaoController{
     private List<Manutencao> manutencoes = new ArrayList();
 

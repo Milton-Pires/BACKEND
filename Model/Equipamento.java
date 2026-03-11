@@ -1,4 +1,6 @@
+package model;
 import java.time.LocalDate;
+import enums.Status;
 
 public abstract class Equipamento{
     protected String id;
