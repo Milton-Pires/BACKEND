@@ -5,7 +5,7 @@ import model.Inspecao;
 import java.util.*;
 public class InspecaoController{
 
-    private List<Inspecao> inspecoes = new ArrayList();
+    private List<Inspecao> inspecoes = new ArrayList<>();
     
     public void agendarInspecao(Inspecao i) {
         inspecoes.add(i);

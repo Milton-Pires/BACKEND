@@ -5,7 +5,7 @@ import model.Extintor;
 import java.util.*;
 
 public class EquipamentoController{
-    private List<Equipamento> equipamentos = new ArrayList();
+    private List<Equipamento> equipamentos = new ArrayList<>();
 
     public void listarEquipamentosComProblema(){
 

@@ -4,7 +4,7 @@ import java.util.List;
 import model.Manutencao;
 
 public class ManutencaoController{
-    private List<Manutencao> manutencoes = new ArrayList();
+    private List<Manutencao> manutencoes = new ArrayList<>();
 
     public void registrarManutencao(Manutencao manutencao){
         manutencoes.add(manutencao);

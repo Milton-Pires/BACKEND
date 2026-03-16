@@ -4,7 +4,7 @@ import java.util.List;
 import model.Usuario;
 
 public class UsuarioController{
-    private List<Usuario> usuarios = new ArrayList();
+    private List<Usuario> usuarios = new ArrayList<>();
 
     public void cadastrarUsuario(Usuario u) {
         usuarios.add(u);
